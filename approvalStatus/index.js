@@ -11,27 +11,25 @@
     @param {req.query.createdBy} string - User's email address
 */
 
-const fetch = require('node-fetch')
-const fs = require('fs')
-const getTravelTraining = require('../shared/getTravelTraining')
-const sendEmail = require('../shared/sendEmail')
-require('../shared/stringFormat')
-global.Headers = fetch.Headers
+const fetch = require("node-fetch");
+const fs = require("fs");
+const getTravelTraining = require("../shared/getTravelTraining");
+const sendEmail = require("../shared/sendEmail");
+require("../shared/stringFormat");
+global.Headers = fetch.Headers;
 
 module.exports = async (context, req) => {
+  // return confirmation immediately
+  context.res = {
+    status: 202
+  };
 
-    // return confirmation immediately
-    context.res = {
-        status: 202
-    }
+  const itemID = req.query.itemID;
+  const createdBy = req.query.createdBy;
 
-    const itemID = req.query.itemID
-    const createdBy  = req.query.createdBy
+  // first, get Travel/Training req
 
-    // first, get Travel/Training req
+  // check for completion
 
-    // check for completion
-
-    // send necessary emails
-
-}
+  // send necessary emails
+};

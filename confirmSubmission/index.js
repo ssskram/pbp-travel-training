@@ -35,7 +35,7 @@ module.exports = async (context, req) => {
     to: createdBy,
     from: {
       email: createdBy,
-      name: "Travel/Training Requests",
+      name: "Travel/Training Requests"
     },
     subject: "Travel/Training Request Submitted"
   };
