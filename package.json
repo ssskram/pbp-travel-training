@@ -2,6 +2,7 @@
   "name": "pbp-travel-training",
   "version": "1.0.0",
   "dependencies": {
+    "dateformat": "^3.0.3",
     "fs": "0.0.1-security",
     "node-fetch": "^2.3.0"
   },
