@@ -11,6 +11,7 @@ const fs = require("fs");
 const dateFormat = require("dateformat");
 const getTravelTraining = require("../shared/getTravelTraining");
 const sendEmail = require("../shared/sendEmail");
+const setLastNotice = require("../shared/setLastNotice");
 require("../shared/stringFormat");
 global.Headers = fetch.Headers;
 
@@ -32,29 +33,29 @@ module.exports = async (context, req) => {
   // send email to current approver
   // set LastNotice to current datetime
   if (tt.finalForward != null && tt.finalApprovalSignature == null) {
-    console.log("Final approver")
+    console.log("Final approver");
     se(tt.finalForward);
-    setLastNotice();
+    setLastNotice(itemID, now);
   } else if (tt.fifthForward != null && tt.fifthApprovalSignature == null) {
-    console.log("Fifth approver")
+    console.log("Fifth approver");
     se(tt.fifthForward);
-    setLastNotice();
+    setLastNotice(itemID, now);
   } else if (tt.fourthForward != null && tt.fourthApprovalSignature == null) {
-    console.log("Fourth approver")
+    console.log("Fourth approver");
     se(tt.fourthForward);
-    setLastNotice();
+    setLastNotice(itemID, now);
   } else if (tt.thirdForward != null && tt.thirdApprovalSignature == null) {
-    console.log("Third approver")
+    console.log("Third approver");
     se(tt.thirdForward);
-    setLastNotice();
+    setLastNotice(itemID, now);
   } else if (tt.secondForward != null && tt.secondApprovalSignature == null) {
-    console.log("Second approver")
+    console.log("Second approver");
     se(tt.secondForward);
-    setLastNotice();
+    setLastNotice(itemID, now);
   } else if (tt.firstForward != null && tt.firstApprovalSignature == null) {
-    console.log("First approver")
+    console.log("First approver");
     se(tt.firstForward);
-    setLastNotice();
+    setLastNotice(itemID, now);
   }
 
   async function se(emailAddress) {
@@ -78,10 +79,5 @@ module.exports = async (context, req) => {
       );
       await sendEmail(load);
     });
-  }
-
-  async function setLastNotice() {
-    // PUT last notice here
-    console.log(now);
   }
 };
