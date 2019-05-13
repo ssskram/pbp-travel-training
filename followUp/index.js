@@ -24,6 +24,8 @@ module.exports = async (context, req) => {
     const itemID = req.query.itemID
     const createdBy  = req.query.createdBy
 
+    // send notice
+    
     // first, get Travel/Training req
 
     // calculate time since last notice
