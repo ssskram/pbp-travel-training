@@ -31,27 +31,27 @@ module.exports = async (context, req) => {
   // set LastNotice to current datetime
   if (tt.finalApprovalSignature == null && tt.finalApprovalSignature != null) {
     console.log("Final approver reminder");
-    requestApproval(tt.finalForward);
+    requestApproval(tt.finalForward, tt);
     setLastNotice(itemID, now);
   } else if (tt.fifthApprovalSignature == null && tt.fourthApprovalSignature != null) {
     console.log("Fifth approver reminder");
-    requestApproval(tt.fifthForward);
+    requestApproval(tt.fifthForward, tt);
     setLastNotice(itemID, now);
   } else if (tt.fourthApprovalSignature == null && tt.thirdApprovalSignature != null) {
     console.log("Fourth approver reminder");
-    requestApproval(tt.fourthForward);
+    requestApproval(tt.fourthForward, tt);
     setLastNotice(itemID, now);
   } else if (tt.thirdApprovalSignature == null && tt.secondApprovalSignature != null) {
     console.log("Third approver reminder");
-    requestApproval(tt.thirdForward);
+    requestApproval(tt.thirdForward, tt);
     setLastNotice(itemID, now);
   } else if (tt.secondApprovalSignature == null && tt.firstApprovalSignature != null) {
     console.log("Second approver reminder");
-    requestApproval(tt.secondForward);
+    requestApproval(tt.secondForward, tt);
     setLastNotice(itemID, now);
   } else if (tt.firstApprovalSignature == null && tt.officerSignature != null) {
     console.log("First approver reminder");
-    requestApproval(tt.firstForward);
+    requestApproval(tt.firstForward, tt);
     setLastNotice(itemID, now);
   }
 };

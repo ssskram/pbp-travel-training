@@ -2,7 +2,7 @@ const fs = require("fs");
 const sendEmail = require("./sendEmail");
 require("./stringFormat");
 
-async function requestApproval(emailAddress) {
+async function requestApproval(emailAddress, tt) {
   const df = "mm/dd/yyyy";
   let load = {
     to: emailAddress,

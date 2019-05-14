@@ -31,27 +31,27 @@ module.exports = async (context, req) => {
   // set LastNotice to current datetime
   if (tt.finalForward != null && tt.finalApprovalSignature == null) {
     console.log("Final approver");
-    requestApproval(tt.finalForward);
+    requestApproval(tt.finalForward, tt);
     setLastNotice(itemID, now);
   } else if (tt.fifthForward != null && tt.fifthApprovalSignature == null) {
     console.log("Fifth approver");
-    requestApproval(tt.fifthForward);
+    requestApproval(tt.fifthForward, tt);
     setLastNotice(itemID, now);
   } else if (tt.fourthForward != null && tt.fourthApprovalSignature == null) {
     console.log("Fourth approver");
-    requestApproval(tt.fourthForward);
+    requestApproval(tt.fourthForward, tt);
     setLastNotice(itemID, now);
   } else if (tt.thirdForward != null && tt.thirdApprovalSignature == null) {
     console.log("Third approver");
-    requestApproval(tt.thirdForward);
+    requestApproval(tt.thirdForward, tt);
     setLastNotice(itemID, now);
   } else if (tt.secondForward != null && tt.secondApprovalSignature == null) {
     console.log("Second approver");
-    requestApproval(tt.secondForward);
+    requestApproval(tt.secondForward, tt);
     setLastNotice(itemID, now);
   } else if (tt.firstForward != null && tt.firstApprovalSignature == null) {
     console.log("First approver");
-    requestApproval(tt.firstForward);
+    requestApproval(tt.firstForward, tt);
     setLastNotice(itemID, now);
   }
 };

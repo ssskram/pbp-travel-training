@@ -10,9 +10,9 @@
 const fetch = require("node-fetch");
 const fs = require("fs");
 const dateFormat = require("dateformat");
-const getTravelTraining = require("../shared/getTravelTraining");
-const sendEmail = require("../shared/sendEmail");
-require("../shared/stringFormat");
+const getTravelTraining = require("../shared/functions/getTravelTraining");
+const sendEmail = require("../shared/functions/sendEmail");
+require("../shared/functions/stringFormat");
 global.Headers = fetch.Headers;
 
 module.exports = async (context, req) => {
