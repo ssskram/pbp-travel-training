@@ -1,8 +1,4 @@
-/* 
-    Called by a cron running behind every submitted Travel/Training request.
-    Called if workflow is not complete, and the last notice was sent more than 2 days ago. 
-    If so, sends a reminder to the relevant approver.
-
+/*
     @param {req.query.itemID} number
     @param {req.query.createdBy} string - User's email address
 */
